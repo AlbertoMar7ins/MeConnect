@@ -1,2 +1,3 @@
 # MeConnect
-MeConnect App TCC 
+
+Aplicativo moderno para conectar clientes e empresas

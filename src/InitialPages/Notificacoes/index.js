@@ -4,20 +4,34 @@ import MCHeader from "../../../components/MCHeader";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Noti from "../../../components/CardNoti";
 import OptionsMenu from "react-native-option-menu";
+import { Searchbar } from "react-native-paper";
 const myIcon = <Ionicons name="ellipsis-vertical" size={26} color="#fff" />;
 
 export default function Notification() {
+  function Search ({title}) {
+    const [searchQuery, setSearchQuery] = React.useState('');
+    const onChangeSearch = query => setSearchQuery(query);
+    return (
+      <Searchbar
+      style={{
+          position: 'relative',
+          padding: 0,
+          backgroundColor: "#F3F3F3",
+          borderRadius: 10,
+          marginLeft: 15,
+          marginRight: 15,
+          marginTop:10,
+          marginBottom:10,
+      }}
+        placeholder={title}
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+      />
+    );
+  };
   return (
     <View style={styles.container}>
       <MCHeader title={"Notificações"}>
-        <TouchableOpacity>
-          <Ionicons
-            name="search"
-            size={26}
-            color={"#fff"}
-            style={styles.icone1}
-          />
-        </TouchableOpacity>
         <OptionsMenu
           customButton={myIcon}
           buttonStyle={{
@@ -27,9 +41,11 @@ export default function Notification() {
             resizeMode: "contain",
           }}
           destructiveIndex={1}
-          options={["Edit", "Delete", "Cancel"]}
+          options={["Sobre", "Editar", "Sair"]}
         />
       </MCHeader>
+      <Search title={"Pesquisar Notifições"}/>
+      <TouchableOpacity><Text style={styles.Limp}>Limpar Tudo()</Text></TouchableOpacity>
       <Noti />
     </View>
   );
@@ -39,10 +55,13 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+
   },
-  icone1: {
-    marginRight: 15,
-  },
+  Limp: {
+    fontSize: 15,
+    marginRight:7,
+    textAlign: "right",
+   fontWeight: "bold",
+   marginBottom:7,
+  }
 });

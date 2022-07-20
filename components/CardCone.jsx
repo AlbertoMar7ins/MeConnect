@@ -1,5 +1,8 @@
 import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Button } from 'react-native-paper';
 
 const DATA = [
   {
@@ -19,8 +22,8 @@ const DATA = [
   },
 ];
 
-const Item = ({ title, desc }) => (
-  <TouchableOpacity >
+const Item  = ({ title, desc }) => (
+  <TouchableOpacity>
   <View style={styles.item}>
     <Text style={styles.title}>{title}</Text>
     <Text style={styles.desc}>{desc}</Text>
@@ -28,7 +31,7 @@ const Item = ({ title, desc }) => (
   </TouchableOpacity>
 );
 
-const App = () => {
+const Cone = () => {
   const renderItem = ({ item }) => (
     <Item title={item.title} desc={item.desc}/>
   );
@@ -68,4 +71,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Cone;

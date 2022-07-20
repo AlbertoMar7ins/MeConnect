@@ -20,8 +20,7 @@ import Octicons from 'react-native-vector-icons/Octicons';
 export default function App() {
   return (
     <NavigationContainer>
-      <Routes />
+      <TopBar />
     </NavigationContainer>
   );
 }
-

@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { StatusBar, StyleSheet, View } from "react-native";
 import { Searchbar } from 'react-native-paper';
-import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 import pallet from "../pallet"
 
-const MyComponent = () => {
+const TopSearch = (title) => {
   const [searchQuery, setSearchQuery] = React.useState('');
 
   const onChangeSearch = query => setSearchQuery(query);
@@ -36,4 +35,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default MyComponent;
+export default TopSearch;

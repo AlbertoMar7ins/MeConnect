@@ -4,7 +4,6 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import "react-native-gesture-handler";
 import pallet from "../../pallet";
 
-import Routes from "../InitialPages/bottomTab";
 import Prin from "./Principal";
 import Post from "./Post";
 import Prods from "./Produtos";

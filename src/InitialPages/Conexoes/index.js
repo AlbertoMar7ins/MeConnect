@@ -1,23 +1,37 @@
 import React from "react";
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import MCHeader from "../../../components/MCHeader";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import App from "../../../components/CardCone";
 import OptionsMenu from "react-native-option-menu";
+import Cone from "../../../components/CardCone";
+import { Searchbar } from "react-native-paper";
 const myIcon = <Ionicons name="ellipsis-vertical" size={26} color="#fff" />;
 
 export default function Conection() {
+  function Search ({title}) {
+    const [searchQuery, setSearchQuery] = React.useState('');
+    const onChangeSearch = query => setSearchQuery(query);
+    return (
+      <Searchbar
+      style={{
+          position: 'relative',
+          padding: 0,
+          backgroundColor: "#F3F3F3",
+          borderRadius: 10,
+          marginLeft: 15,
+          marginRight: 15,
+          marginTop:10,
+          marginBottom:10,
+      }}
+        placeholder={title}
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+      />
+    );
+  };
   return (
     <View style={styles.container}>
       <MCHeader title={"Conexões"}>
-        <TouchableOpacity>
-          <Ionicons
-            name="search"
-            size={26}
-            color={"#fff"}
-            style={styles.icone1}
-          />
-        </TouchableOpacity>
         <OptionsMenu
           customButton={myIcon}
           buttonStyle={{
@@ -30,7 +44,8 @@ export default function Conection() {
           options={["Edit", "Delete", "Cancel"]}
         />
       </MCHeader>
-      <App />
+      <Search title={"Pesquisar Conexões"} />
+      <Cone />
     </View>
   );
 }

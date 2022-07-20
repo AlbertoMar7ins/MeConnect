@@ -1,4 +1,4 @@
-import { Button, Pressable, StyleSheet, Text } from "react-native"
+import { Button, Pressable, StyleSheet, Text, TouchableOpacity } from "react-native"
 import Pallet from '../pallet'
 
 function MCButton({ paddingX, paddingY, type = 'primary', onClick, children }) {
@@ -10,16 +10,17 @@ function MCButton({ paddingX, paddingY, type = 'primary', onClick, children }) {
   )
 }
 
-const styles = (paddingX = 30, paddingY = 12) => StyleSheet.create({
+const styles = (paddingX = 80, paddingY = 9) => StyleSheet.create({
   buttonPrimary: {
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: paddingX,
     paddingVertical: paddingY,
-    borderRadius: 4,
     elevation: 3,
+    borderWidth: 1,
+    borderColor: Pallet.seventhColor,
     backgroundColor: Pallet.primaryColor,
-    borderRadius: 10
+    borderRadius: 8
   },
   buttonSecondary: {
     alignItems: 'center',
@@ -34,8 +35,8 @@ const styles = (paddingX = 30, paddingY = 12) => StyleSheet.create({
     borderRadius: 10
   },
   textPrimary: {
-    fontSize: 16,
-    lineHeight: 21,
+    fontSize: 15,
+    lineHeight: 15,
     fontWeight: 'bold',
     color: 'white',
   },

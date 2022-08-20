@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Searchbar } from "react-native-paper";
+import Posti from "../../../components/CordPost";
 
 export default function Post() {
   function Search({ title }) {
@@ -28,7 +29,8 @@ export default function Post() {
   return (
     <View style={styles.container}>
       <Search title={"Pesquisar postagem"} />
-      <Text style={styles.txt}>Nenhum produto encontrado</Text>
+      <Posti/>
+      {/* <Text style={styles.txt}>Nenhum produto encontrado</Text> */}
     </View>
   );
 }

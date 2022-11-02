@@ -17,7 +17,7 @@ import { Api, Colors } from "meconnect-sdk";
 export default function Prin() {
   const [vendor, setVendor] = useState({})
   useEffect(async ()=> {
-    await Api.token.set('1|jnA1wBtsiyauJOeWOGY1QfuMuoEXtRnIIDX63MPQ')
+    await Api.token.set('1|2mzCLH7ElnFDfZe8HJJronXdl80D8WRYTvWvwobj')
     const vendor = await Api.db.vendors.get(1)
     setVendor(vendor.data)
     console.log(vendor)
@@ -25,17 +25,11 @@ export default function Prin() {
   return (
     <SafeAreaView style={styles.container}>
       {/* Fotos */}
-      {/* <Image style={styles.banner} source={require("@expo/img/sapatos.jpg")} /> */}
       <Image style={styles.banner} source={{uri: vendor.banner_url}} />
-      {/* <Image style={styles.logo} source={require("@expo/img/tobo.jpg")} /> */}
       <Image style={styles.logo} source={{uri: vendor.photo_url}} />
 
       {/* Cabeçalho */}
-      {/* <Text style={styles.titulo}>Santo Calçados</Text> */}
       <Text style={styles.titulo}>{vendor.name}</Text>
-      {/* <Text style={styles.desc}>
-        Melhor loja e atacado de roupas e sapatos da cidade
-      </Text> */}
       <Text style={styles.desc} >{vendor.description}</Text>
 
       {/* Conectar */}
@@ -45,7 +39,6 @@ export default function Prin() {
 
 
       {/* CNPJ */}
-      {/* <Text style={styles.cnpj}>CNPJ: 119.648.123/1111-60</Text> */}
       <Text style={styles.cnpj}>CNPJ: {vendor.cnpj}</Text>
 
       {/* Infos */}
@@ -113,7 +106,7 @@ const styles = StyleSheet.create({
   desc: {
     textAlign: "center",
     fontSize: 17,
-    marginBottom: "2%",
+    marginBottom: "4%",
     marginLeft: 20,
     marginRight: 20,
   },
@@ -122,11 +115,12 @@ const styles = StyleSheet.create({
     borderWidth: 7,
     color: Colors.Black,
     width: 500,
-    height: 60,
+    height: 50,
     textAlign: "center",
     fontSize: 18,
     fontWeight: "bold",
-    marginTop: "4%",
+    marginTop: "5%",
+    paddingTop: 13,
   },
   soci: {
     fontSize: 25,

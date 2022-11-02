@@ -78,7 +78,7 @@ const Posti = () => {
 
   const [posts, setPosts] = useState([]);
   useEffect(async () => {
-    await Api.token.set("1|jnA1wBtsiyauJOeWOGY1QfuMuoEXtRnIIDX63MPQ");
+    await Api.token.set("1|2mzCLH7ElnFDfZe8HJJronXdl80D8WRYTvWvwobj");
     const posts = await Api.db.vendors.getPosts(1);
     setPosts(posts.data);
     console.log(posts);

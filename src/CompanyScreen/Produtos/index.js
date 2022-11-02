@@ -94,9 +94,7 @@ export default function Prods() {
   const Item = ({ photo_url, description, price }) => (
     <View style={styles.item}>
       <Image style={styles.prod} source={{ uri: photo_url }} />
-      <Text style={styles.desc} numberOfLines={1}>
-        {description}
-      </Text>
+      <Text style={styles.desc} numberOfLines={1}>{description}</Text>
       <Text style={styles.val}>R${price},00</Text>
     </View>
   );
@@ -110,7 +108,7 @@ export default function Prods() {
 
   const [products, setProducts] = useState([]);
   useEffect(async () => {
-    await Api.token.set("1|jnA1wBtsiyauJOeWOGY1QfuMuoEXtRnIIDX63MPQ");
+    await Api.token.set("1|2mzCLH7ElnFDfZe8HJJronXdl80D8WRYTvWvwobj");
     const products = await Api.db.vendors.getProducts(1);
     setProducts(products.data);
     console.log(products);
@@ -120,22 +118,7 @@ export default function Prods() {
   return (
     <View style={styles.container}>
       <Search title={"Pesquisar produto"} />
-      <Text style={styles.Text1}>Mais Pesquisados</Text>
       <FlatList
-        horizontal
-        decelerationRate={0}
-        snapToInterval={200}
-        snapToAlignment="center"
-        data={products}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-      <Text style={styles.Text1}>Em Oferta</Text>
-      <FlatList
-        horizontal
-        decelerationRate={0}
-        snapToInterval={200}
-        snapToAlignment="center"
         data={products}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
@@ -148,40 +131,42 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
     flex: 1,
+    width: '100%',
   },
   icone1: {
     marginRight: 15,
   },
   prod: {
-    width: "100%",
-    height: "70%",
+    width: "50%",
+    height: "50%",
     borderRadius: 8,
     marginBottom: 10,
   },
-  Text1: {
-    marginTop: 25,
-    marginBottom: 15,
-    marginLeft: 20,
-    textAlign: "left",
-    fontWeight: "bold",
-    fontSize: 20,
-  },
+  // Text1: {
+  //   marginTop: 25,
+  //   marginBottom: 15,
+  //   marginLeft: 20,
+  //   textAlign: "left",
+  //   fontWeight: "bold",
+  //   fontSize: 20,
+  // },
   item: {
     backgroundColor: "#F3F3F3",
+    alignItems: 'center',
     padding: 15,
     borderRadius: 8,
-    marginLeft: 10,
-    marginHorizontal: 5,
-    height: "90%",
-    width: 200,
-    alignItems: "center",
+    marginVertical: 4,
+    marginHorizontal: 16,
   },
   desc: {
-    fontSize: 15,
+    fontSize: 17,
+    marginTop:10,
+    marginBottom:0,
+    fontWeight: "bold",
   },
   val: {
     fontSize: 15,
     fontWeight: "bold",
-    paddingTop: 6,
+    paddingTop: 8,
   },
 });

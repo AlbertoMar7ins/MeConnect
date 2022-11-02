@@ -38,17 +38,7 @@ export default function TopBar() {
         },
       }}
     >
-      {/* <Tab.Screen
-        name="Voltar"
-        component={Routes}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="arrow-back-outline" size={25} color={color} />
-          ),
-        }}
-      /> */}
       
-
       <Tab.Screen name="Principal" component={Prin} />
 
       <Tab.Screen name="Posts" component={Post} />

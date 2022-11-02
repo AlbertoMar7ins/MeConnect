@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from 'react-native';
 import MCHeader from "../../../components/MCHeader";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -6,8 +6,18 @@ import OptionsMenu from "react-native-option-menu";
 import Cone from "../../../components/CardCone";
 import { Searchbar } from "react-native-paper";
 const myIcon = <Ionicons name="ellipsis-vertical" size={26} color="#fff" />;
+import { Api } from "meconnect-sdk";
 
 export default function Conection() {
+
+  // const [conection, setVendor] = useState({})
+  // useEffect(async ()=> {
+  //   await Api.token.set('1|jnA1wBtsiyauJOeWOGY1QfuMuoEXtRnIIDX63MPQ')
+  //   const conection = await Api.db.conection.get(1)
+  //   setVendor(conection.data)
+  //   console.log(conection)
+  // },[])
+
   function Search ({title}) {
     const [searchQuery, setSearchQuery] = React.useState('');
     const onChangeSearch = query => setSearchQuery(query);

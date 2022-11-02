@@ -4,16 +4,18 @@ import Pallet from '../pallet'
 function MCButton({ paddingX, paddingY, type = 'primary', onClick, children }) {
   const typeFormatted = type.charAt(0).toUpperCase() + type.slice(1)
   return (
-    <Pressable onPress={onClick} style={styles(paddingX, paddingY)[`button${typeFormatted}`]}>
+    <TouchableOpacity onPress={onClick} style={styles(paddingX, paddingY)[`button${typeFormatted}`]}>
       <Text style={styles()[`text${typeFormatted}`]}>{children}</Text>
-    </Pressable>
+    </TouchableOpacity>
   )
 }
 
-const styles = (paddingX = 80, paddingY = 9) => StyleSheet.create({
+const styles = (paddingX = 20, paddingY = 10) => StyleSheet.create({
   buttonPrimary: {
+    width: 200,
     alignItems: 'center',
     justifyContent: 'center',
+    alignSelf: 'center',
     paddingHorizontal: paddingX,
     paddingVertical: paddingY,
     elevation: 3,

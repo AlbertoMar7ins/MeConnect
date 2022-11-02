@@ -15,12 +15,13 @@ import MCTitle from './components/MCTitle';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Octicons from 'react-native-vector-icons/Octicons';
+import Produto from './src/CompanyScreen/Produto';
 
 
 export default function App() {
   return (
     <NavigationContainer>
-      <TopBar />
+      <Produto />
     </NavigationContainer>
   );
 }
